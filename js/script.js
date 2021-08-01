@@ -41,12 +41,12 @@ function start() {
     skor = 0;
     papanSkor.textContent = 0;
     munculkanTikus();
-    var fiveMinutes = 15 * 1,
+    var fiveMinutes = 20 * 1,
     display = document.querySelector('#time');
 startTimer(fiveMinutes, display);
     setTimeout(() => {
         selesai = true;
-    }, 15000);
+    }, 20000);
 }
 
 
