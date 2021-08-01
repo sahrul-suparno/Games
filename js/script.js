@@ -46,7 +46,7 @@ function start() {
 startTimer(fiveMinutes, display);
     setTimeout(() => {
         selesai = true;
-    }, 10000);
+    }, 15000);
 }
 
 
