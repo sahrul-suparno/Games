@@ -41,6 +41,9 @@ function start() {
     skor = 0;
     papanSkor.textContent = 0;
     munculkanTikus();
+    var fiveMinutes = 15 * 1,
+    display = document.querySelector('#time');
+startTimer(fiveMinutes, display);
     setTimeout(() => {
         selesai = true;
     }, 10000);
@@ -57,3 +60,33 @@ function pukul() {
 tikus.forEach(t => {
     t.addEventListener('click', pukul);
 });
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    let stopper = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            // timer = duration;
+            clearTimeout(stopper);
+            alert("Times up!");
+        }
+        
+    }, 1000);
+    
+}
+
+
+
+// window.onload = function () {
+//     var fiveMinutes = 60 * 5,
+//         display = document.querySelector('#time');
+//     startTimer(fiveMinutes, display);
+// };
